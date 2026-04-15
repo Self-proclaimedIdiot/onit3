@@ -29,7 +29,7 @@ namespace MyProject.Tests
             // Поскольку в вашем коде контекст создается через new внутри контроллера, 
             // для полноценного Unit-теста в будущем стоит использовать Dependency Injection.
             // Сейчас мы протестируем логику создания объекта.
-            var controller = new CitizenController(mockConfig.Object); 
+            var controller = new CitizenController(mockConfig.Object, context); 
             var newCitizen = new Citizen { Id = 1, FirstName = "Иван", LastName = "Иванов" };
 
             // Act (Действие)

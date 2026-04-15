@@ -10,9 +10,10 @@ namespace MyProject.Server.Controllers
     {
         private readonly IConfiguration _configuration;
         private readonly AppDbContext _context = new AppDbContext(new DbContextOptions<AppDbContext>());
-        public CitizenController(IConfiguration configuration)
+        public CitizenController(IConfiguration configuration, AppDbContext context)
         {
             _configuration = configuration;
+            _context = context;
         }
 
         // GET: api/Citizens
