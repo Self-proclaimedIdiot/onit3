@@ -85,6 +85,7 @@ const CitizenPage = () => {
 
     return (
         <div style={{ padding: '20px' }}>
+            <p>Hello!</p>
             <h2>Управление гражданами</h2>
 
             <div style={{ marginBottom: '20px' }}>

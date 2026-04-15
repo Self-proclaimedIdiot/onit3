@@ -4,7 +4,9 @@ import './App.css'
 import CitizenPage from './CitizenPage.jsx'
 function App() {
 
-   return (<CitizenPage />)
+    return (
+        <CitizenPage />
+    )
 }
 
 export default App
