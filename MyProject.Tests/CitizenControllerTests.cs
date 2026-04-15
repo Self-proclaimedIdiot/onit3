@@ -13,7 +13,6 @@ namespace MyProject.Tests
         private AppDbContext GetDatabaseContext()
         {
             var options = new DbContextOptionsBuilder<AppDbContext>()
-                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
                 .Options;
             var databaseContext = new AppDbContext(options);
             databaseContext.Database.EnsureCreated();
