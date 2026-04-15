@@ -9,7 +9,7 @@ namespace MyProject.Server.Controllers
     public class CitizenController : ControllerBase
     {
         private readonly IConfiguration _configuration;
-        private readonly AppDbContext _context = new AppDbContext(new DbContextOptions<AppDbContext>());
+        private readonly AppDbContext _context;
         public CitizenController(IConfiguration configuration, AppDbContext context)
         {
             _configuration = configuration;

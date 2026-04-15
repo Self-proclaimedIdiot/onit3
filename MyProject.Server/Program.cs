@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using MyProject.Server.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHealthChecks(); // Добавляем службу
 
@@ -13,7 +16,8 @@ builder.Services.AddCors(options =>
         policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
     });
 });
-
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 app.MapHealthChecks("/health"); // Регистрируем маршрут
